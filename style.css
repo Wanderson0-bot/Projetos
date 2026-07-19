@@ -1535,3 +1535,122 @@ footer h6 {
     transform: translateX(calc(100vw + 600px));
   }
 }
+
+/* ===================================
+   AJUSTES PARA DISPOSITIVOS MÓVEIS
+=================================== */
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container { width: min(100% - 32px, 560px); }
+  section, .destinos, .pacotes, .experiencias, .estatisticas, .section-inspiracao { padding: 64px 0; }
+
+  h1 { font-size: 36px; }
+  h2 { font-size: 30px; }
+  h3 { font-size: 19px; }
+  p { font-size: 14px; line-height: 1.65; }
+
+  header { padding: 16px 0; }
+  header .container { position: relative; }
+  .area-logo h1 { font-size: 18px; }
+  .area-logo p { font-size: 8px; letter-spacing: 2px; }
+  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; z-index: 2; }
+  header nav {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 18px;
+    background: rgba(15, 23, 42, 0.96);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
+  }
+  header nav.aberto { display: flex; }
+  header nav ul { flex-direction: column; align-items: stretch; gap: 0; }
+  header nav ul li a { display: block; padding: 12px 4px; font-size: 15px; }
+  header nav ul li a::after { display: none; }
+  header .btn-whatsapp { width: 100%; padding: 12px; font-size: 14px; }
+
+  .hero { min-height: 650px; padding: 150px 0 100px; background-position: 58% center; }
+  .hero-conteudo-left { width: 100%; }
+  .hero-conteudo-left h1 { font-size: clamp(40px, 12vw, 54px); margin-bottom: 18px; }
+  .hero-conteudo-left p { font-size: 15px; margin-bottom: 28px; }
+  .hero-conteudo-left p br, .inspiracao-info br, .inspiracao-card br, .beneficio-card br { display: none; }
+  .hero-conteudo-left .btn-aviao { width: 100%; padding: 14px 16px; font-size: 13px; text-align: center; }
+
+  .pesquisa-viagem { margin-top: -54px; padding: 0; }
+  .pesquisa-form { width: min(100% - 32px, 560px); flex-direction: column; align-items: stretch; gap: 0; padding: 18px; border-radius: 18px; }
+  .campo { gap: 12px; padding: 10px 0; }
+  .campo i { font-size: 22px; }
+  .campo-texto label, .campo-texto input, .campo-texto select { font-size: 13px; }
+  .pesquisa-form .linha { width: 100%; height: 1px; }
+  .btn-pesquisar { margin-top: 10px; width: 100%; padding: 13px; }
+
+  .beneficios { padding-top: 72px; }
+  .beneficios-cards, .destinos-cards, .pacotes-cards, .experiencias-cards, .estatisticas-cards, .inspiracao-cards { grid-template-columns: 1fr; gap: 18px; }
+  .inspiracao-cards { display: grid; }
+  .beneficio-card, .estatistica-card { padding: 22px; border-radius: 18px; }
+  .beneficio-card-top { margin-bottom: 14px; gap: 14px; }
+  .beneficio-card-top i { width: 52px; height: 52px; font-size: 23px; }
+  .beneficio-card h3 { font-size: 18px; }
+  .beneficio-card p { font-size: 13px; }
+
+  .estatisticas-header, .experiencias-header { margin-bottom: 28px; }
+  .estatistica-valor { font-size: 42px; }
+  .estatistica-card p { font-size: 14px; }
+  .destinos-conteudo > a { justify-content: flex-start; margin: 12px 0 28px; font-size: 14px; }
+  .destino-card, .pacote-card, .experiencia-card, .inspiracao-card { border-radius: 18px; }
+  .destino-card img, .pacote-card img, .experiencia-card > img, .inspiracao-card img { height: 190px; }
+  .destino-info, .pacote-info, .experiencia-info { padding: 20px; }
+  .destino-info h3 { font-size: 21px; }
+  .destino-info strong, .pacote-rodape strong { font-size: 23px; }
+  .pacotes-header { align-items: flex-start; gap: 12px; margin-bottom: 28px; }
+  .pacotes-link, .experiencias-link { font-size: 14px; }
+  .pacote-info h3 { margin: 14px 0; }
+  .pacote-lista { gap: 9px; margin-bottom: 18px; }
+  .pacote-lista li { font-size: 13px; }
+  .pacote-rodape { flex-direction: row; align-items: center; }
+  .experiencia-info h3 { margin: 14px 0 10px; }
+  .experiencia-info p { margin-bottom: 18px; font-size: 13px; }
+  .experiencia-autor strong { font-size: 13px; }
+
+  .inspiracao-conteudo { display: block; }
+  .inspiracao-info { margin-bottom: 28px; }
+  .inspiracao-info h2 { margin-bottom: 12px; }
+  .inspiracao-card p { margin: 18px 18px 10px; font-size: 11px; }
+  .inspiracao-card h3 { padding: 0 18px 22px; font-size: 18px; }
+  .cta { padding: 64px 16px; }
+  .cta h2 { font-size: 30px; }
+  .cta p { font-size: 14px; margin-bottom: 28px; }
+  .cta a { padding: 14px 20px; font-size: 14px; }
+  .circle-mala { width: 76px; height: 76px; margin-bottom: 24px; }
+  .circle-mala i { font-size: 34px; }
+
+  footer { padding: 52px 0 22px; }
+  footer .container { gap: 30px; }
+  .footer-credito { flex-direction: column; gap: 6px; }
+}
+
+@media (max-width: 420px) {
+  .container { width: min(100% - 24px, 560px); }
+  .hero { min-height: 610px; }
+  .hero-conteudo-left h1 { font-size: 40px; }
+  .hero-conteudo-left .btn-aviao span { max-width: 210px; }
+  .pesquisa-form { width: min(100% - 24px, 560px); padding: 15px; }
+  .pacote-rodape { flex-direction: column; align-items: flex-start; }
+  .btn-pacote { width: 100%; }
+}

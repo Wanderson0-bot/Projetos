@@ -48,3 +48,24 @@ estatisticas.forEach((estatistica) => {
 });
 
 document.getElementById("ano").textContent = new Date().getFullYear();
+
+const menuToggle = document.querySelector(".menu-toggle");
+const menuPrincipal = document.querySelector("#menu-principal");
+
+if (menuToggle && menuPrincipal) {
+    menuToggle.addEventListener("click", () => {
+        const aberto = menuPrincipal.classList.toggle("aberto");
+        menuToggle.setAttribute("aria-expanded", aberto);
+        menuToggle.setAttribute("aria-label", aberto ? "Fechar menu de navegação" : "Abrir menu de navegação");
+        menuToggle.querySelector("i").className = aberto ? "bi bi-x-lg" : "bi bi-list";
+    });
+
+    menuPrincipal.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            menuPrincipal.classList.remove("aberto");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Abrir menu de navegação");
+            menuToggle.querySelector("i").className = "bi bi-list";
+        });
+    });
+}
